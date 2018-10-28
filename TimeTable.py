@@ -76,7 +76,6 @@ for key , value in sorted_d:
   temp_dict={}
   count=value
   while(count>0):
-    print(1)
     for row in range(0,len(classes_name)):
       for column in range(0,len(subject_headers)):
         if(new_dataset.iloc[row,column]==key):
@@ -84,14 +83,12 @@ for key , value in sorted_d:
           for period in range(0,len(slot_headers)):
             if(str(curr_df.iloc[0,period])=='nan'):
               if(period not in temp_dict and slot_counters[0][period]<=3):
-                
-               # curr_df.at[0:-1,period]=key
-                #time_table[classes_name[row]].at[0:-1,period]=key
+                curr_df.at[0:-1,period]=key
+                time_table[classes_name[row]].at[0:-1,period]=key
                 temp_dict[period]=1
-                print('much')
                 for inc in range(0,4):
                   slot_counters[inc][period]=slot_counters[inc][period] + 1
-                count=count-1
+                  count=count-1
           
                 
                 
