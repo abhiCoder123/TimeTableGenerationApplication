@@ -88,7 +88,12 @@ for key , value in sorted_d:
                 temp_dict[period]=1
                 for inc in range(0,4):
                   slot_counters[inc][period]=slot_counters[inc][period] + 1
-                  count=count-1
+      count=count-1
           
-                
-                
+    
+for out in range(0,len(classes_name)):
+  current_df=time_table[classes_name[out]]
+  current_df.to_csv(classes_name[0], sep='\t', encoding='utf-8')
+  
+
+              
